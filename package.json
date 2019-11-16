@@ -1,0 +1,35 @@
+{
+  "name": "enjoyshare.net",
+  "version": "0.0.0",
+  "description": "A site that collects classified articles",
+  "main": "./bin/index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node ./bin/index.js",
+    "dev": "set DEBUG=* & node --inspect ./bin/index.js",
+    "dev:server": "set DEBUG=* & npx supervisor --inspect ./bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bravechen/enjoyshare.net.git"
+  },
+  "author": "Brave Chan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bravechen/enjoyshare.net/issues"
+  },
+  "homepage": "https://github.com/Bravechen/enjoyshare.net#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "debug": "^4.1.1",
+    "express": "^4.17.1",
+    "hbs": "^4.0.6",
+    "http-errors": "^1.7.3",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.7.1",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^8.0.0"
+  }
+}
