@@ -14,6 +14,7 @@ const { setMiddlewares } = require('./config/middlewares.js');
 const { setViewEngine } = require('./config/viewEngine.js');
 const { setRoutes, setStatic } = require('./routes/routes');
 const { handleErrs } = require('./config/handleErrs');
+const serverConfig = require(path.relative(__dirname, `${process.cwd()}/server.config.js`));
 //============================================================
 
 //============================================================
@@ -51,7 +52,6 @@ module.exports = [
     app: null,
     express,
     appDebug: debug('app'),
-    viewsDir: path.join(process.cwd(), './web/views'),
-    staticDirs: [path.join(process.cwd(), './web/static')]
+    ...serverConfig
   }
 ).app;

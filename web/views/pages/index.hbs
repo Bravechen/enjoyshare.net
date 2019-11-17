@@ -1,0 +1,25 @@
+{{#section 'styles'}}
+<style>
+  body {
+    width: 1024px;
+    height: 768px;
+    margin: 0 auto;
+  }
+</style>
+{{/section}}
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+<br>
+{{> Hello name=title}}
+<br>
+{{> prompt}}
+
+{{#section 'scripts'}}
+<script>
+  (function() {
+    'use strict';
+    var title = '{{title}}'
+    console.log('hello, ', title);
+  })();
+</script>
+{{/section}}

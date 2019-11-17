@@ -22,7 +22,7 @@ function setStatic({ app, express, appDebug, staticDirs }) {
   
   let list = staticDirs.map(function(item, index) {
     // default static
-    if (typeof item === 'string' && index === 0) {
+    if (typeof item === 'string') {
       app.use(express.static(item));
       return item;
     }

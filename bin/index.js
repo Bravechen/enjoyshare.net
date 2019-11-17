@@ -9,6 +9,8 @@
 const app = require('../server/app.js');
 const http = require('http');
 const debug = require('debug');
+const path = require('path');
+const serverConfig = require(path.relative(__dirname, `${process.cwd()}/server.config.js`));
 //============================================================
 const serverDebug = debug('server');
 const errDebug = debug('error');
@@ -83,7 +85,7 @@ const { server } = [
   }, 
   {
     app,
-    port: normalizePort(3000)
+    port: normalizePort(serverConfig.port || 3000)
   }
 );
 //============================================================

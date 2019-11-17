@@ -6,14 +6,14 @@ function err404(req, res, next) {
 }
 
 // error handler
-function err500(err, req, res, next) {
+function errDefault(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('./pages/error');
 }
 
 /**
@@ -26,7 +26,7 @@ function handleErrs({ app, appDebug }) {
   app.use(err404);
 
   // error handler
-  app.use(err500);
+  app.use(errDefault);
   appDebug('set error handler');
   return {};
 }
