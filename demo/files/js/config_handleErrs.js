@@ -1,7 +1,14 @@
+module.exports = function ({
+  description,
+  author,
+  date,
+  version
+}) {
+  return `
 /**
- * @description 错误管理
- * @author Brave Chan on 2019.11
- * @version 0.0.0
+ * @description ${description}
+ * @author ${author} on ${date}
+ * @version ${version}
  */
 //============================================================
 const createError = require('http-errors');
@@ -31,10 +38,10 @@ function errDefault(err, req, res, next) {
 }
 
 /**
- * @internal
- * @description 处理错误
- * @param {*} param0
- */
+* @internal
+* @description 处理错误
+* @param {*} param0
+*/
 function handleErrs({ app, appDebug }) {
   // catch 404 and forward to error handler
   app.use(err404);
@@ -47,4 +54,6 @@ function handleErrs({ app, appDebug }) {
 //============================================================
 module.exports = {
   handleErrs
+};
+`;
 };

@@ -1,7 +1,14 @@
+module.exports = function({
+  description,
+  author,
+  date,
+  version
+}) {
+  return `
 /**
- * @description 中间件设置
- * @author Brave Chan on 2019.11
- * @version 0.0.0
+ * @description ${description}
+ * @author ${author} on ${date}
+ * @version ${version}
  */
 //============================================================
 const cookieParser = require('cookie-parser');
@@ -33,4 +40,7 @@ module.exports = {
   cookieParser,
   logger,
   setMiddlewares
+};
+`;
+
 };

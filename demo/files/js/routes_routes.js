@@ -1,7 +1,14 @@
+module.exports = function ({
+  description,
+  author,
+  date,
+  version
+}) {
+  return `
 /**
- * @description 路由配置
- * @author Brave Chan on 2019.11
- * @version 0.0.0
+ * @description ${description}
+ * @author ${author} on ${date}
+ * @version ${version}
  */
 //============================================================
 const indexRouter = require('./index');
@@ -44,3 +51,5 @@ function setStatic({ app, express, appDebug, staticDirs }) {
 }
 //============================================================
 module.exports = { setRoutes, setStatic };
+`;
+};

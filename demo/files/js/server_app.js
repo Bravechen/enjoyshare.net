@@ -1,7 +1,14 @@
+module.exports = function ({
+  description,
+  author,
+  date,
+  version
+}) {
+  return `
 /**
- * @description 服务器设置
- * @author Brave Chan on 2019.11
- * @version 0.0.0
+ * @description ${description}
+ * @author ${author} on ${date}
+ * @version ${version}
  */
 //============================================================
 
@@ -14,7 +21,7 @@ const { setMiddlewares } = require('./config/middlewares.js');
 const { setViewEngine } = require('./config/viewEngine.js');
 const { setRoutes, setStatic } = require('./routes/routes');
 const { handleErrs } = require('./config/handleErrs');
-const serverConfig = require(path.relative(__dirname, `${process.cwd()}/server.config.js`));
+const serverConfig = require(path.relative(__dirname, \`\${process.cwd()}/server.config.js\`));
 //============================================================
 
 //============================================================
@@ -55,3 +62,5 @@ module.exports = [
     ...serverConfig
   }
 ).app;
+`;
+};

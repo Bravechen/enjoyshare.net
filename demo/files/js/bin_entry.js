@@ -1,16 +1,25 @@
+module.exports = function({
+  projectName,
+  projectDescription,
+  author,
+  date,
+  projectVersion
+}) {
+  return `
 #!/usr/bin/env node
 
 /**
- * @description enjoyshare.net
- * @author Brave Chan on 2019.11
- * @version 0.0.0
+ * @description ${projectName}\n
+ * ${projectDescription}
+ * @author ${author} on ${date}
+ * @version ${projectVersion}
  */
 //============================================================
 const app = require('../server/app.js');
 const http = require('http');
 const debug = require('debug');
 const path = require('path');
-const serverConfig = require(path.relative(__dirname, `${process.cwd()}/server.config.js`));
+const serverConfig = require(path.relative(__dirname, \`\${process.cwd()}/server.config.js\`));
 //============================================================
 const serverDebug = debug('server');
 const errDebug = debug('error');
@@ -131,12 +140,14 @@ function onListerning() {
   ? addr
   : addr.port;
   const bind = typeof addr === 'string'
-  ? `pipe ${port}`
-  : `port ${port}`;
-  const address = `http://127.0.0.1:${port}`;
-  serverDebug(`Listening on ${bind}`);
-  console.log(`Please copy the address and open browser to visit:  ${address}`);
+  ? \`pipe \${port}\`
+  : \`port \${port}\`;
+  const address = \`http://127.0.0.1:\${port}\`;
+  serverDebug(\`Listening on \${bind}\`);
+  console.log(\`Please copy the address and open browser to visit: \${address}\`);
 }
 //============================================================
-
 module.exports = {};
+`;
+
+};

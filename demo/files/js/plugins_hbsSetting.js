@@ -1,7 +1,14 @@
+module.exports = function ({
+  description,
+  author,
+  date,
+  version
+}) {
+  return `
 /**
- * @description 用于对hbs进行设置
- * @author Brave Chan on 2019.11
- * @version 0.0.0
+ * @description ${description}
+ * @author ${author} on ${date}
+ * @version ${version}
  */
 //============================================================
 const hbs = require('hbs');
@@ -34,7 +41,7 @@ function registerSectionHelper() {
 //============================================================
 /**
  * @public
- * @description 用于对hbs进行设置
+ * @description ${description}
  * @param {string} viewsDir [required] 视图目录
  * @param {any} viewEngine [required] 视图引擎设置
  */
@@ -49,3 +56,6 @@ module.exports = function(viewsDir, viewEngine) {
     viewEngine
   });
 }
+
+`;
+};

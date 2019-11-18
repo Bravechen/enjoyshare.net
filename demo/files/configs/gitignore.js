@@ -1,3 +1,5 @@
+module.exports = function() {
+  return `
 # Logs
 logs
 *.log
@@ -61,3 +63,6 @@ typings/
 .next
 
 .vscode/
+
+`;
+};

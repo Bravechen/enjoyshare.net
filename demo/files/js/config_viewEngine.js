@@ -1,7 +1,14 @@
+module.exports = function({
+  description,
+  author,
+  date,
+  version
+}) {
+  return `
 /**
- * @description 模板引擎配置
- * @author Brave Chan on 2019.11
- * @version 0.0.0
+ * @description ${description}
+ * @author ${author} on ${date}
+ * @version ${version}
  */
 //============================================================
 /**
@@ -31,3 +38,5 @@ function setViewEngine({ app, appDebug, viewsDir, viewEngine }) {
 };
 //============================================================
 module.exports = { setViewEngine };
+`;
+};

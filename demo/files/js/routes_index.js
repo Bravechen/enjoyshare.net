@@ -1,8 +1,15 @@
+module.exports = function ({
+  description,
+  author,
+  date,
+  version
+}) {
+  return `
 /**
- * @description 默认根路由
- * @author Brave Chan on 2019.11
- * @version 0.0.0
- */
+* @description ${description}
+* @author ${author} on ${date}
+* @version ${version}
+*/
 //============================================================
 const express = require('express');
 const router = express.Router();
@@ -14,3 +21,5 @@ router.get('/', function(req, res, next) {
 });
 //============================================================
 module.exports = router;
+`;
+};
