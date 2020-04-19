@@ -1,0 +1,24 @@
+{{#section 'styles'}}
+{{/section}}
+<main class="page create-art" >
+  <form action="/api/articles" method="post">
+    <div>
+      <label for="articleTitle">文章标题：</label>
+      <input type="text" id="articleTitle" name="title" placeholder="请输入文章标题" >
+    </div>
+    <div>
+      <label for="articleLink">文章链接：</label>
+      <input type="text" id="articleLink" name="link" placeholder="请输入文章链接" >
+    </div>
+    <div>
+      <label for="articleDesc">文章简介：</label>
+      <input type="text" id="articleDesc" name="desc" placeholder="请输入文章简介">
+    </div>
+    <div class="ctrl-box" >
+      <button type="submit" id="saveBtn" >保存</button>
+      <button type="reset" id="clearBtn" >清空</button>
+    </div>
+  </form>
+</main>
+{{#section 'scripts'}}
+{{/section}}

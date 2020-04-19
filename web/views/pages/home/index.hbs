@@ -7,13 +7,14 @@
   }
 </style>
 {{/section}}
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
-<br>
-{{> Hello name=title}}
-<br>
-{{> prompt}}
-
+<main class="page home-page" >
+  <h1>{{title}}</h1>
+  <p>Welcome to {{title}}</p>
+  <br>
+  {{> Hello name=title}}
+  <br>
+  {{> prompt}}
+</main>
 {{#section 'scripts'}}
 <script>
   (function() {

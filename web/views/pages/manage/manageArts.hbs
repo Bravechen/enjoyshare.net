@@ -1,0 +1,21 @@
+{{#section 'styles'}}
+{{/section}}
+<main class="page manage-arts" >
+  <ul>
+    {{#each articleList}}
+    <li>
+      <div>
+        <div>{{title}}</div>
+        <div>链接：{{link}}</div>
+        <div>简介：{{desc}}</div>
+      </div>
+      <div>
+        <a href="javascript:void 0">删除</a>
+        <a href="/manage/edit/{{id}}"></a>
+      </div>
+    </li>
+    {{/each}}
+  </ul>
+</main>
+{{#section 'scripts'}}
+{{/section}}

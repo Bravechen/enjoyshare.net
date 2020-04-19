@@ -8,9 +8,9 @@ const createError = require('http-errors');
 //============================================================
 // 错误页面模板地址
 const errTemplate = {
-  [404]: './pages/err4x',
-  [500]: './pages/err5x',
-  default: './pages/error'
+  [404]: './pages/errors/err4x',
+  [500]: './pages/errors/err5x',
+  default: './pages/errors/error'
 };
 
 // catch 404 and forward to error handler

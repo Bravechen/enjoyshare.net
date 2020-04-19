@@ -5,6 +5,9 @@
  */
 //============================================================
 const indexRouter = require('./index');
+const api = require('./api');
+const articles = require('./articles');
+const manage = require('./manage');
 //============================================================
 /**
  * @internal
@@ -12,8 +15,18 @@ const indexRouter = require('./index');
  * @param {*} param0
  */
 function setRoutes({ app, appDebug }) {
-  app.use('/', indexRouter);
 
+  // 首页
+  app.use('/', indexRouter);
+  app.use('/home', indexRouter);
+
+  // 文章页
+  app.use('/articles', articles);
+  // 管理页
+  app.use('/manage', manage);
+
+  // api
+  app.use('/api', api);
 
   appDebug('set routers');
   return {};

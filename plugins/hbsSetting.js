@@ -5,15 +5,16 @@
  */
 //============================================================
 const hbs = require('hbs');
+const path = require('path');
 //============================================================
 /**
  * @private
  * @description 注册partials文件目录
  * @param {any}
  */
-function registerPartials({ viewEngine }) {
+function registerPartials({ viewEngine, projectRoot }) {
   for (let dir of (viewEngine.partials || [])) {
-    hbs.registerPartials(dir);
+    hbs.registerPartials(path.join(projectRoot, dir));
   }
 }
 
@@ -38,7 +39,7 @@ function registerSectionHelper() {
  * @param {string} viewsDir [required] 视图目录
  * @param {any} viewEngine [required] 视图引擎设置
  */
-module.exports = function(viewsDir, viewEngine) {
+module.exports = function(viewsDir, viewEngine, projectRoot) {
   [
     registerPartials,
     registerSectionHelper
@@ -46,6 +47,7 @@ module.exports = function(viewsDir, viewEngine) {
     return Object.assign({}, prev, item(prev) || {});
   }, {
     viewsDir,
-    viewEngine
+    viewEngine,
+    projectRoot,
   });
 }

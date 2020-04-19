@@ -10,7 +10,7 @@
  * @param {any}
  * @returns {any}
  */
-function setViewEngine({ app, appDebug, viewsDir, viewEngine }) {
+function setViewEngine({ app, appDebug, viewsDir, viewEngine, projectRoot }) {
   // view engine setup
   app.set('views', viewsDir);
   app.set('view engine', viewEngine.engine);
@@ -23,7 +23,7 @@ function setViewEngine({ app, appDebug, viewsDir, viewEngine }) {
     if (typeof settingFn !== 'function') {
       continue;
     }
-    settingFn(viewsDir, viewEngine);
+    settingFn(viewsDir, viewEngine, projectRoot);
   }
 
   appDebug('set view engine', viewEngine.engine);

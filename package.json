@@ -6,8 +6,9 @@
   "scripts": {
     "test": "test",
     "start": "node ./bin/index.js",
-    "dev": "set DEBUG=* & node --inspect ./bin/index.js",
-    "dev:server": "set DEBUG=* & npx supervisor --inspect ./bin/index.js"
+    "dev": "export DEBUG=* && node --inspect ./bin/index.js",
+    "dev:server": "export DEBUG=* && npx supervisor --inspect ./bin/index.js",
+    "server": "export NODE_ENV=development && export SOME_ENV=123 && npx supervisor -i node_modules --inspect ./bin/index.js"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,7 @@
     "cookie-parser": "^1.4.4",
     "debug": "^4.1.1",
     "express": "^4.17.1",
-    "hbs": "^4.0.6",
+    "hbs": "^4.1.1",
     "http-errors": "^1.7.3",
     "morgan": "^1.9.1"
   },
