@@ -2,6 +2,15 @@
 {{/section}}
 <main class="page articles" >
   <h1>文章列表</h1>
+  <ul>
+    {{#each articles}}
+    <hr>
+    <li>
+      <div>标题：<a href="/articles/{{id}}" target="_blank">{{title}}</a></div>
+      <div>简介：<p>{{content}}</p></div>
+    </li>
+    {{/each}}
+  </ul>
 </main>
 {{#section 'scripts'}}
 {{/section}}

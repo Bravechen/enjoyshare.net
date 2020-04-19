@@ -1,9 +1,10 @@
 {{#section 'styles'}}
 {{/section}}
 <main class="page article-page">
-  <h3>{{title}}</h3>
   <article class="cnt" >
-    {{articleCnt}}
+    <h4>{{title}}</h4>
+    <div>文章链接：<a href="{{link}}" target="_blank" >{{link}}</a></div>
+    <p>{{content}}</p>
   </article>
 </main>
 {{#section 'scripts'}}

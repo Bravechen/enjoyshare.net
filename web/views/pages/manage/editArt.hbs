@@ -1,5 +1,24 @@
 {{#section 'styles'}}
 {{/section}}
-<main class="page edit-art" ></main>
+<main class="page edit-art" >
+  <form action="/api/articles/{{id}}" method="put">
+    <div>
+      <label for="articleTitle">文章标题：</label>
+      <input type="text" id="articleTitle" value="{{title}}" name="title" placeholder="请输入文章标题" >
+    </div>
+    <div>
+      <label for="articleLink">文章链接：</label>
+      <input type="text" id="articleLink" name="link" value="{{link}}" placeholder="请输入文章链接" >
+    </div>
+    <div>
+      <label for="articleDesc">文章简介：</label>
+      <textarea name="desc" id="articleDesc" cols="30" rows="10" placeholder="请输入文章简介">{{content}}</textarea>
+    </div>
+    <div class="ctrl-box" >
+      <button type="submit" id="saveBtn" >保存</button>
+      <button type="reset" id="clearBtn" >清空</button>
+    </div>
+  </form>
+</main>
 {{#section 'scripts'}}
 {{/section}}
